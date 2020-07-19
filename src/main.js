@@ -23,15 +23,28 @@ function adding(){
     const counter=document.querySelector("#counter");
     counter.innerHTML=list.childElementCount;
 }
+
 function sqlDate(){//converting from js date to SQL date
     const d=new Date();
     const dateArr=[d.getMonth(), d.getDate(), d.getHours(), d.getMinutes(), d.getSeconds()];
-    for(let i=0;i<dateArr.length;i++){
+    for(let i = 0; i < dateArr.length; i++){
         if(dateArr[i]<10){
             dateArr[i]="0"+dateArr[i];
         }
     }
     return `${d.getFullYear()}-${dateArr[0]}-${dateArr[1]} ${dateArr[2]}:${dateArr[3]}:${dateArr[4]}`;
+}
+
+function sorting(){
+    const list=document.querySelector("ul");
+    const items=list.children;
+    for(let i = 5; i > 0 ; i--){
+        for (const listItem of items) {
+            if(listItem.querySelector(".todoPriority").innerHTML ===  i.toString()){
+                list.insertBefore(listItem, list.firstChild);
+            }
+        }
+    }
 }
 
 const addButton=document.querySelector("#addButton");
