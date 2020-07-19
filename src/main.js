@@ -38,7 +38,7 @@ function sqlDate(){//converting from js date to SQL date
 function sorting(){
     const list=document.querySelector("ul");
     const items=list.children;
-    for(let i = 5; i > 0 ; i--){
+    for(let i = 1; i < 6 ; i++){
         for (const listItem of items) {
             if(listItem.querySelector(".todoPriority").innerHTML ===  i.toString()){
                 list.insertBefore(listItem, list.firstChild);
@@ -49,5 +49,5 @@ function sorting(){
 
 const addButton=document.querySelector("#addButton");
 addButton.addEventListener("click", adding);
-const sortButton=document.querySelector("#sort");
+const sortButton=document.querySelector("#sortButton");
 sortButton.addEventListener("click", sorting);
