@@ -20,8 +20,10 @@ function adding(){
     container.appendChild(text);
     listItem.appendChild(container);
     list.appendChild(listItem);
+    const counter=document.querySelector("#counter");
+    counter.innerHTML=list.childElementCount;
 }
-function sqlDate(){
+function sqlDate(){//converting from js date to SQL date
     const d=new Date();
     const dateArr=[d.getMonth(), d.getDate(), d.getHours(), d.getMinutes(), d.getSeconds()];
     for(let i=0;i<dateArr.length;i++){
@@ -34,3 +36,5 @@ function sqlDate(){
 
 const addButton=document.querySelector("#addButton");
 addButton.addEventListener("click", adding);
+const sortButton=document.querySelector("#sort");
+sortButton.addEventListener("click", sorting);
