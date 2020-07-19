@@ -1,43 +1,46 @@
 function adding(){
-    const list=document.querySelector("ul");
-    const prioritySelection=document.querySelector("#prioritySelector");
-    const input=document.querySelector("#textInput");
-    const listItem=document.createElement("li");
-    const container=document.createElement("div");
-    const priority=document.createElement("span");
-    const time=document.createElement("span");
-    const text=document.createElement("span");
-    container.className="todoContainer";
-    priority.className="todoPriority";
-    time.className="todoCreatedAt";
-    text.className="todoText";
-    priority.innerHTML=prioritySelection.value;
-    time.innerHTML=sqlDate();
-    text.innerHTML=input.value;
-    input.value="";
+    //Setup and creation of elements for the function 
+    const prioritySelection = document.querySelector("#prioritySelector");
+    const list = document.querySelector("ul");
+    const input = document.querySelector("#textInput");
+    const listItem = document.createElement("li");
+    const container = document.createElement("div");
+    const priority = document.createElement("span");
+    const time = document.createElement("span");
+    const text = document.createElement("span");
+    container.className = "todoContainer";
+    priority.className = "todoPriority";
+    time.className = "todoCreatedAt";
+    text.className = "todoText";
+    //Inserting the desired content and adding the item in to the list
+    priority.innerHTML = prioritySelection.value;
+    time.innerHTML = sqlDate();
+    text.innerHTML = input.value;
+    input.value = "";
     container.appendChild(priority);
     container.appendChild(time);
     container.appendChild(text);
     listItem.appendChild(container);
     list.appendChild(listItem);
-    const counter=document.querySelector("#counter");
-    counter.innerHTML=list.childElementCount;
+    //updating the counter
+    const counter = document.querySelector("#counter");
+    counter.innerHTML = list.childElementCount;
 }
 
 function sqlDate(){//converting from js date to SQL date
-    const d=new Date();
-    const dateArr=[d.getMonth(), d.getDate(), d.getHours(), d.getMinutes(), d.getSeconds()];
+    const d = new Date();
+    const dateArr = [d.getMonth(), d.getDate(), d.getHours(), d.getMinutes(), d.getSeconds()];
     for(let i = 0; i < dateArr.length; i++){
-        if(dateArr[i]<10){
-            dateArr[i]="0"+dateArr[i];
+        if(dateArr[i] < 10){
+            dateArr[i] = "0" + dateArr[i];
         }
     }
     return `${d.getFullYear()}-${dateArr[0]}-${dateArr[1]} ${dateArr[2]}:${dateArr[3]}:${dateArr[4]}`;
 }
 
-function sorting(){
-    const list=document.querySelector("ul");
-    const items=list.children;
+function sorting(){//sorting the list by priority
+    const list = document.querySelector("ul");
+    const items = list.children;
     for(let i = 1; i < 6 ; i++){
         for (const listItem of items) {
             if(listItem.querySelector(".todoPriority").innerHTML ===  i.toString()){
