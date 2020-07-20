@@ -12,6 +12,11 @@ function adding(){
     priority.className = "todoPriority";
     time.className = "todoCreatedAt";
     text.className = "todoText";
+    //Bonus-adding checked option
+    const checkButton = document.createElement("button");
+    checkButton.className = "checkButton";
+    checkButton.onclick = checked;
+    container.appendChild(checkButton);
     //Inserting the desired content in to the item and adding it to the list
     priority.innerHTML = prioritySelection.value;
     time.innerHTML = sqlDate();
@@ -47,6 +52,18 @@ function sorting(){//sorting the list by priority
                 list.insertBefore(listItem, list.firstChild);
             }
         }
+    }
+}
+
+function checked(){
+    const check = event.target;
+    if(check.checked){
+        check.checked = false;
+        check.innerHTML = "";
+    }
+    else{
+        check.checked = true;
+        check.innerHTML = "✔";
     }
 }
 
