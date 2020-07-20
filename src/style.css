@@ -34,7 +34,7 @@ button:hover{
 button:active{
     border-style: inset;
 }
-#textInput{
+input{
     background: none;
     font-family: inherit;
     font-size: inherit;
@@ -43,6 +43,9 @@ button:active{
     border: solid gray;
     border-width: 0px 0px 2px 0px;
     padding: 0px;
+}
+#searchInput{
+    width: 250px;
 }
 #prioritySelector{
     width: 40px;

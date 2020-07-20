@@ -92,17 +92,19 @@ function checked(){
 //Bonus- deleting all finshed tasks
 
 function deleting(){
-    if(!confirm("Are you sure you finshed these tasks?"))
-    {
-        return;
-    }
     const finshed = document.querySelectorAll(".checkButton");
+    let boolean = true;
     finshed.forEach( checkButton => {
         if(checkButton.checked)
         {
+            if(!confirm("Are you sure you finshed these tasks?") && boolean === true)
+            {
+                return;//Asking *once* if you want to delete
+            }
             const li=checkButton.parentElement.parentElement;
             history.push(li);
             li.remove();
+            boolean = false;
         }        
     });
     const counter = document.querySelector("#counter");
@@ -117,6 +119,26 @@ function undo(){
     list.appendChild(history.pop());
 }
 
+//Bonus- search tasks
+
+function search(){
+    const tasks = document.querySelectorAll(".todoText");
+    const list = document.querySelector("ul");
+    const search = event.target.value;
+    let boolean = false;
+    const reg = new RegExp(search,"ig");
+    tasks.forEach(text => {
+        if(reg.test(text.innerHTML))
+        {
+            list.insertBefore(text.parentElement.parentElement,list.firstChild);
+            boolean = true;
+        }
+    });
+    if(!boolean && search !=="" && list.childElementCount !== 0){
+        alert("No such task")
+    }
+}
+
 //Global scope
 
 const addButton=document.querySelector("#addButton");
@@ -127,6 +149,8 @@ const deleteButton=document.querySelector("#deleteButton");
 deleteButton.addEventListener("click", deleting);
 const undoButton=document.querySelector("#undoButton");
 undoButton.addEventListener("click", undo);
+const searchInput=document.querySelector("#searchInput");
+searchInput.addEventListener("keyup", search);
 
 const history=[];
 
@@ -136,7 +160,7 @@ textInput.focus();
 //Bonus- adding task on Enter press
 
 textInput.addEventListener("keypress", () => {
-    if(event.key==="Enter"){
+    if(event.key === "Enter"){
         adding();
     }
 });
