@@ -20,6 +20,14 @@ h1{
     flex-wrap: wrap;
 }
 /* Control-section */
+#sortButton{
+    background-color: #262626;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    border-radius: 20%;
+    border-style: groove;
+}
 #textInput{
     background: none;
     font-family: inherit;
@@ -32,11 +40,43 @@ h1{
 }
 #prioritySelector{
     width: 40px;
+    background-color: #262626;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    border-radius: 20%;
 }
 #addButton{
     width: 7.5%;
-}
-#count-and-sort{
-    width: 100%;
+    background-color: #262626;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    border-radius: 20%;
+    border-style: groove;
 }
 /* View section */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  li{
+      width: 100%;
+  }
+.todoContainer{
+    display: flex;
+    width: 100%;
+}
+.todoPriority{
+    min-width: 23.5px;
+}
+.todoCreatedAt{
+    margin: 0 5px 0 5px;
+    min-width: 240px;
+}
+.todoText{
+    margin: 0 5px 0 5px;
+    width: 100%;
+}

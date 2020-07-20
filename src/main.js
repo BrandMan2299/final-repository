@@ -12,7 +12,7 @@ function adding(){
     priority.className = "todoPriority";
     time.className = "todoCreatedAt";
     text.className = "todoText";
-    //Inserting the desired content and adding the item in to the list
+    //Inserting the desired content in to the item and adding it to the list
     priority.innerHTML = prioritySelection.value;
     time.innerHTML = sqlDate();
     text.innerHTML = input.value;
