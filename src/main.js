@@ -100,7 +100,9 @@ function deleting(){
     finshed.forEach( checkButton => {
         if(checkButton.checked)
         {
-            checkButton.parentElement.parentElement.remove();
+            const li=checkButton.parentElement.parentElement;
+            history.push(li);
+            li.remove();
         }        
     });
     const counter = document.querySelector("#counter");
@@ -108,7 +110,14 @@ function deleting(){
     counter.innerHTML = list.childElementCount;
 }
 
-//Main file- where it all begins (A.K.A event listners)
+//Bonus-undoing deletion one by one
+
+function undo(){
+    const list = document.querySelector("ul");
+    list.appendChild(history.pop());
+}
+
+//Global scope
 
 const addButton=document.querySelector("#addButton");
 addButton.addEventListener("click", adding);
@@ -116,6 +125,11 @@ const sortButton=document.querySelector("#sortButton");
 sortButton.addEventListener("click", sorting);
 const deleteButton=document.querySelector("#deleteButton");
 deleteButton.addEventListener("click", deleting);
+const undoButton=document.querySelector("#undoButton");
+undoButton.addEventListener("click", undo);
+
+const history=[];
+
 const textInput=document.querySelector("#textInput");
 textInput.focus();
 
