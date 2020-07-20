@@ -28,9 +28,6 @@ button{
     border-radius: 20%;
     border-style: groove;
 }
-button:focus{
-    outline: none;
-}
 button:hover{
     border-style: double;
 }
@@ -47,9 +44,6 @@ button:active{
     border-width: 0px 0px 2px 0px;
     padding: 0px;
 }
-#textInput:focus{
-    outline: none;
-}
 #prioritySelector{
     width: 40px;
     background-color: #262626;
@@ -58,7 +52,7 @@ button:active{
     font-size: inherit;
     border-radius: 20%;
 }
-#prioritySelector:focus{
+:focus{
     outline: none;
 }
 /* View section */

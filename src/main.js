@@ -3,6 +3,12 @@ function adding(){
     const prioritySelection = document.querySelector("#prioritySelector");
     const list = document.querySelector("ul");
     const input = document.querySelector("#textInput");
+    //Bonus-only enter non-empty task (you can delete it if it's bothering)
+    if(input.value===""){
+        alert("What did I want to do?");
+        input.focus();
+        return;
+    }
     const listItem = document.createElement("li");
     const container = document.createElement("div");
     const priority = document.createElement("span");
@@ -30,6 +36,7 @@ function adding(){
     //updating the counter
     const counter = document.querySelector("#counter");
     counter.innerHTML = list.childElementCount;
+    input.focus();
 }
 
 function sqlDate(){//converting from js date to SQL date
@@ -55,7 +62,7 @@ function sorting(){//sorting the list by priority
     }
 }
 
-function checked(){
+function checked(){//Bonus- changing the checked atributte and text
     const check = event.target;
     if(check.checked){
         check.checked = false;
@@ -67,7 +74,33 @@ function checked(){
     }
 }
 
+function deleting(){//Bonus- deleting all finshed tasks
+    if(!confirm("Are you sure you finshed these tasks?"))
+    {
+        return;
+    }
+    const finshed = document.querySelectorAll(".checkButton");
+    finshed.forEach( checkButton => {
+        if(checkButton.checked)
+        {
+            checkButton.parentElement.parentElement.remove();
+        }        
+    });
+    const counter = document.querySelector("#counter");
+    const list = document.querySelector("ul");
+    counter.innerHTML = list.childElementCount;
+}
+
 const addButton=document.querySelector("#addButton");
 addButton.addEventListener("click", adding);
 const sortButton=document.querySelector("#sortButton");
 sortButton.addEventListener("click", sorting);
+const deleteButton=document.querySelector("#deleteButton");
+deleteButton.addEventListener("click", deleting);
+const textInput=document.querySelector("#textInput");
+textInput.focus();
+textInput.addEventListener("keypress", () => {//Bonus- adding on enter
+    if(event.key==="Enter"){
+        adding();
+    }
+});
