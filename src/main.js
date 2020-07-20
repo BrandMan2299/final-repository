@@ -16,7 +16,7 @@ function adding(){
     
     //Bonus-only enter non-empty task (you can delete it if it's bothering)
     
-    if(input.value===""){
+    if(input.value === ""){
         alert("What did I want to do?");
         input.focus();
         return;
@@ -97,7 +97,7 @@ function deleting(){
     finshed.forEach( checkButton => {
         if(checkButton.checked)
         {
-            if(!confirm("Are you sure you finshed these tasks?") && boolean === true)
+            if(boolean === true && !confirm("Are you sure you finshed these tasks?"))
             {
                 return;//Asking *once* if you want to delete
             }

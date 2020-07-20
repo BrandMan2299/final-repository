@@ -115,3 +115,9 @@ $ npm run test
  - Add link to the PR you created in your private repo [here](https://docs.google.com/spreadsheets/d/1P9_YDGqIqmV10fvTmIXc_AGV0_ycI2aBFo2h5zprUMI/edit#gid=1903529310), fill the other details
 
  GOOD LUCK!
+
+ 
+## gifs
+ ![My todo app](./ui-testing-recording.gif)
+ 
+ ![My todo app extra](./bonus-features.gif)

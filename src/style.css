@@ -19,7 +19,6 @@ h1{
     flex-direction: row;
     flex-wrap: wrap;
 }
-/* Control-section */
 button{
     background-color: #262626;
     color: inherit;
@@ -34,6 +33,7 @@ button:hover{
 button:active{
     border-style: inset;
 }
+/* Control-section */
 input{
     background: none;
     font-family: inherit;
@@ -88,6 +88,8 @@ li{
     margin: 0 5px 0 5px;
     min-width: 43.556px;
     min-height: 43.556px;
+    max-width: 43.556px;
+    max-height: 43.556px;
     border-radius: 50%;
     font-size: 80%;
 }
