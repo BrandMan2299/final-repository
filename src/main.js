@@ -117,6 +117,8 @@ function deleting(){
 function undo(){
     const list = document.querySelector("ul");
     list.appendChild(history.pop());
+    const counter = document.querySelector("#counter");
+    counter.innerHTML = list.childElementCount;
 }
 
 //Bonus- search tasks
