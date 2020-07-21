@@ -123,3 +123,5 @@ $ npm run test
  ![My todo app extra](./bonus-features.gif)
 
  [My interview](https://drive.google.com/file/d/1xbpmeg0V7ZZrJPLoxhnl8TsC-EOAiyDk/view?usp=sharing)
+
+ [vercel deployment](https://vercel.com/brandman2299/todo-list/igbdobzq4)
