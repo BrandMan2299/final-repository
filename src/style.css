@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+body{/* General setups */
+    background-color: #262626;
+    color: #e6b800;
+    font-family: 'Gloria Hallelujah', cursive;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 22px;
+}
+h1{
+    font-size: 64px;
+    align-self: center;
+}
+.section{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+button{
+    background-color: #262626;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    border-radius: 20%;
+    border-style: groove;
+}
+button:hover{
+    border-style: double;
+}
+button:active{
+    border-style: inset;
+}
+/* Control-section */
+input{
+    background: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: #e6b800;
+    width: 85%;
+    border: solid gray;
+    border-width: 0px 0px 2px 0px;
+    padding: 0px;
+}
+#searchInput{
+    width: 250px;
+}
+#prioritySelector{
+    width: 40px;
+    background-color: #262626;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    border-radius: 20%;
+}
+:focus{
+    outline: none;
+}
+/* View section */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+li{
+  width: 100%;
+  }
+.todoContainer{
+    display: flex;
+    width: 100%;
+}
+.todoPriority{
+    min-width: 23.5px;
+    text-align: center;
+}
+.todoCreatedAt{
+    margin: 0 5px 0 5px;
+    min-width: 240px;
+}
+.todoText{
+    margin: 0 5px 0 5px;
+    width: 100%;
+}
+.checkButton{
+    margin: 0 5px 0 5px;
+    min-width: 43.556px;
+    min-height: 43.556px;
+    max-width: 43.556px;
+    max-height: 43.556px;
+    border-radius: 50%;
+    font-size: 80%;
+}

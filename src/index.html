@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>To Do List</title>
+</head>
+<body>
+    <h1>To Do List</h1>
+    <div class="section" id="control-section">
+        <div id="counterAndButtons">
+            You Have <span id="counter">0</span> Tasks Left
+            <button id="sortButton">Sort</button>
+            <button id="deleteButton">Delete</button>
+            <button id="undoButton">Undo</button>
+            <input id="searchInput" placeholder="Looking for something?">
+        </div>
+        <input id="textInput">
+        <select id="prioritySelector">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <button id="addButton">Add</button>
+    </div>
+    <div class="section" id="view-section">
+        <ul id="todo-list"></ul>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>
